@@ -10,15 +10,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: ExtractFiles@1
-  inputs:
-    archiveFilePatterns: '**/*.zip'
-    destinationFolder: '$(Build.SourcesDirectory)'
-    cleanDestinationFolder: true
-    overwriteExistingFiles: false
+- 
 - task: Maven@3
   inputs:
-    mavenPomFile: 'app/pom.xml'
+    mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
